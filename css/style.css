@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    /* 1rem => 18px 
+    rem: font-size, spacing (margin, padding)*/
+    font-size: 18px;
+    font-family: 'Hind', sans-serif;
+}
+
+/* HEADER */
+header {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.navbar .navbar-brand i {
+    color: #35a22c;
+    font-size: 45px;
+}
+
+.navbar .navbar-brand span {
+    font-size: 36px;
+    color: white;
+}
+
+#portNavbar .nav-item .nav-link {
+    color: white;
+    transition: all 0.5s;
+}
+
+#portNavbar .nav-item:hover .nav-link {
+    color: #35a22c;
+}
+
+#portNavbar .navbar-nav .active .nav-link {
+    color: #35a22c;
+}
+
+#portNavbar .navbar-nav .nav-item {
+    position: relative;
+}
+
+#portNavbar .navbar-nav .nav-item::before {
+    content: "";
+    height: 2px;
+    width: 0;
+    background-color: #35a22c;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 0.5s;
+}
+
+#portNavbar .navbar-nav .nav-item:hover::before {
+    width: 100%;
+}
+
+/* responsive header */
+/* @media [type] (type: screen, print, speech, all) */
+/* Desktop-first (max-width): màn hình lớn trc, màn hình nhỏ sau */
+@media screen and (max-width: 992px) {
+
+    /* điều kiện hiển thị code css: ở vùng màn hình nhỏ hơn và bằng 992px */
+    header .navbar-toggler {
+        background-color: #35a22c;
+        color: white;
+    }
+
+    /* khi các vùng màn hình nhỏ hơn liền kề nhau có chung thiết kế với màn hình lớn thì chỉ cần xét cs ở màn hình lớn */
+    #portNavbar{
+        background-color: white;
+    }
+    #portNavbar .nav-item .nav-link {
+        color: #35a22c;
+    }
+}
+
+@media screen and (max-width:576px) {
+
+    /* vùng ảnh hưởng của code css: nhỏ hơn và bằng 576px */
+    header .navbar-toggler {
+        background-color: yellow;
+    }
+    #portNavbar .navbar-nav .nav-item:hover {
+        background-color: #35a22c;
+    }
+    #portNavbar .navbar-nav .nav-item:hover a{
+        color: white;
+    }
+}
+
+/* CAROUSEL */
+/* C1: lấy 1 kích thước hình chuẩn px) */
+#portcarouselCaptions .carousel-inner .carousel-item>img {
+    /* height: 1332px; */
+    /* vh (carousel): viewport height (lấy kích thước height của màn hình)*/
+    /* vw (chữ h1, h2 - tiêu đề quan trọng kh muốn bị rớt hàng khi coi
+     ở các màn hình khac nhau): viewport width (lấy kích thước width của màn hình) */
+    /* % : lấy kích thước thẻ cha gần nhất */
+    height: 100vh;
+    object-fit: cover;
+}
+
+#portcarouselCaptions ol li {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+#portcarouselCaptions .carousel-caption img {
+    /* hình vuông kh cần xét height */
+    width: 140px;
+    border-radius: 50%;
+}
+
+#portcarouselCaptions .carousel-caption {
+    /* căn giữa cho position */
+    /* % (width, height, top, left...) lấy theo thẻ cha gần nhất */
+    top: 50%;
+    left: 50%;
+    /* % lấy theo kích thước thẻ con */
+    transform: translate(-50%, -50%);
+}
+
+/* PROJECTS */
+/* color, spacing, font-size: code riêng css3 */
+.projects {
+    padding: 70px 0;
+}
+
+/* Thêm khoảng cách (trên dưới) cho các col: margin, padding */
+.projects__row {
+    gap: 30px 0;
+}
+
+/* AWARD */
+.award {
+    padding: 70px 0;
+    background-image: url(../img/memphis_3.png);
+    background-size: 50%;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+}
+
+.award__left {
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, .3);
+    border-radius: 10px;
+    backdrop-filter: blur(3px);
+}
